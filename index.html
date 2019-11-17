@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href='css\index.css' rel='stylesheet' type='text/css'>
+    <link href='css\header.css' rel='stylesheet' type='text/css'>
+    <link href='css\font.css' rel='stylesheet' type='text/css'>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="main-container-div">
+        <!-- header -->
+        <div class="header">
+            <input id="signUpButtonClick" class="topButtons" type="button" onclick="openSignUpButton()" value="Sign Up">
+            <input id="loginButtonClick" class="topButtons" type="button" onclick="openSignIn()" value="Sign In">
+            <a id="pageTitle" class="logo-title" href="..\index.html">ScriBBler</a>
+            <p class="middleText">Explore, Imagine, Create</p>
+        </div>
+         <!-- middle buttons -->
+        <div class="postButtons">
+            <input id="allPostsClick" class="middleButtons" type="button" onclick="getAllPosts()" value="All Posts" />
+            <input id="newPostClick" class="middleButtons" type="button" onclick="openCreatePost()" value="Create Post">
+        </div>
+    </div>
+<!-- sign in modal -->
+    <div id="signInModal" class="modal">
+        <form class="modal-content" action="/action_page.php">
+            <span onclick="onCloseModalClicked()" class="close_signIn" title="Close Modal">&times;</span>
+            <div class="container">
+                <h1>Welcome Back!</h1>
+                <hr>
+                <label for="Username" class="label">
+                    <b>Username</b>
+                </label>
+                <input type="text" placeholder="Enter Username" name="Username" required>
+
+                <label for="psw" class="label">
+                    <b>Password</b>
+                </label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <div class="clearfix" class="label">
+
+                    <button type="submit" class="signinbtn">Sign In</button>
+                </div>
+            </div>
+            <div id="signUpPrompt" class="signUpForm">Not a member?
+                <span id="" class="signUp" onclick="openSignUp()">Sign Up</span>
+            </div>
+        </form>
+    </div>
+   <!-- sign up modal -->
+    <div id="signUpModal" class="modal">
+        <div class="modal-content-sigup">
+            <span onclick="onCloseModalClicked()" class="close_signIn" title="Close Modal">&times;</span>
+            <form class="modal-content-sigUp" action="/action_page.php">
+                <div class="container-signUp">
+
+                    <h1>Get Started</h1>
+                    <hr>
+                    <label for="Fullname" class="label">Full Name</label>
+                    <input type="text" placeholder="Enter Full Name" name="Fullname" required>
+                    <label for="Username" class="label">Username</label>
+                    <input type="text" placeholder="Enter Username" name="Username" required>
+                    <label for="psw" class="label">Password</label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <label for="pswrepeat" class="label">Confirm Password</label>
+                    <input type="password" placeholder="Confirm Password" name="pswrepeat" required>
+                    <div class="clearfix">
+                        <button type="submit" class="signupbtn">Sign Up</button>
+                        <button type="button" class="cancelbtn">Clear</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="newPostModal" class="newPostBox">
+        <div class="newPost-Content">
+            <span onclick="onCloseNewPost()" class="close_newPost">&times;</span>
+            <h1 id="formHeader">Pen Your Post</h1>
+            <form id="newPostForm" action="/action_page.php">
+                <label for="newPostTitle">Title: </label>
+                <br />
+                <input id="newPostTitle" type="text" name="Title" class="post-title">
+                <br />
+                <br />
+                <label for="postContent">Content: </label>
+                <textarea id="postContent" rows="27" cols="20" name="Content"></textarea>
+                <input id="newPostSubmit" type="submit" value="Create">
+            </form>
+        </div>
+    </div>
+    <script src=".\js\index.js"></script>
+    <script src=".\js\header.js">
+    </script>
+
+
+</body>
+
+</html>
